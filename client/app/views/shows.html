@@ -1,0 +1,76 @@
+<div layout="row" class="layout-wrap" layout-padding="">
+  <md-input-container flex-sm="100" flex-md="33">
+    <label>Search</label>
+    <input  ng-model="search">
+  </md-input-container>
+</div>
+
+<div layout="row" class="layout-wrap" layout-fill id="shows">
+  <div ng-repeat="show in shows | toArray: false | filter: search | filter: {approved: filterApproved}" flex="100" flex-gt-md="50" flex-lg="50" flex-gt-lg="33">
+    <md-card ng-class="{ greyed: !show.approved }">
+      <div class="card-image">
+        <md-button class="md-fab md-mini edit-icon" ng-click="editImage($event, show)" aria-label="Edit Image">
+          <md-icon md-svg-src="/images/svg/ic_mode_edit_white_18px.svg"></md-icon>
+        </md-button>
+        <img ng-src="{{show.banner}}" class="md-card-image" alt="">
+      </div>
+      <md-card-content>
+        <a href="{{'http://www.imdb.com/title/' + show.IMDB_ID}}" target="_blank"><h6 class="md-title" ng-bind="show.title"></h6></a> <span class="network">{{show.Network}}</span>
+        <span ng-show="show.matchingIssue" style="color: #ff0000">Issue matching title!</span>
+        <div layout="row">
+          <div flex="33">
+            <md-input-container>
+              <label>Id</label>
+              <input disabled ng-model="show.id">
+            </md-input-container>
+          </div>
+          <div flex="33">
+            <md-input-container>
+              <label>Season</label>
+              <input ng-model="show.cSeason">
+            </md-input-container>
+          </div>
+          <div flex="33">
+            <md-input-container>
+              <label>Episode</label>
+              <input ng-model="show.cEpisode">
+            </md-input-container>
+          </div>
+        </div>
+        <div layout="row" class="layout-wrap">
+          <div flex-sm="50" flex-gt-sm="40">
+            <md-input-container>
+              <label>Target</label>
+              <input ng-model="show.target">
+            </md-input-container>
+          </div>
+          <div flex-sm="50" flex-gt-sm="40">
+            <md-input-container>
+              <label>Quality</label>
+              <input ng-model="show.quality">
+            </md-input-container>
+          </div>
+          <div flex-sm="50" flex-gt-sm="20">
+            <md-input-container>
+              <label>Timeframe</label>
+              <input type="number" ng-model="show.timeframe">
+            </md-input-container>
+          </div>
+        </div>
+      </md-card-content>
+      <div class="md-actions" layout="row" layout-align="end center">
+        <md-button ng-click="showSample($event)"
+                   title="Show sample qualities"
+                   aria-label="Show sample qualities"
+                   class="md-icon-button launch" >
+          <md-icon md-svg-icon="/images/svg/ic_help_black_24px.svg"></md-icon></md-button>
+        <!--<md-switch class="md-secondary" ng-model="show.isApproved" aria-label="Configure">Configure</md-switch>-->
+        <md-checkbox ng-model="show.isApproved" aria-label="Configure">
+          Configure
+        </md-checkbox>
+        <md-button class="md-primary md-raised" ng-click="saveShow(show)">Save</md-button>
+
+      </div>
+    </md-card>
+  </div>
+</div>

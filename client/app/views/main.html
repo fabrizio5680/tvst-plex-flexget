@@ -1,0 +1,49 @@
+<!--{\"lastViewedAt\":\"1440179082\",\"parent\":\"Peppa Pig\",\"views\":\"4\",\"show_id\":\"79222\",\"season_number\":\"2\",\"number\":\"26\"}-->
+
+<div id="checkin" layout="row" class="layout-wrap">
+  <div ng-repeat="show in shows" flex-sm="50" flex-md="33" flex-gt-md="25">
+    <md-card>
+      <div class="card-image">
+        <img ng-src="{{show.art}}" class="md-card-image" alt="">
+      </div>
+      <md-card-content>
+        <h6 class="md-title" ng-bind="show.parent"></h6>
+        <span class="checkin-date" ng-bind="formatDate(show.lastViewedAt)"></span>
+        <div layout="row">
+          <div flex="30" class="heading">
+            Season
+          </div>
+          <div flex="70" class="text-right">
+            <span ng-bind="(parseInt(show.season_number, 10) < 10 ? '0' + show.season_number : show.season_number)"></span>
+          </div>
+        </div>
+        <div layout="row">
+          <div flex="30" class="heading">
+            Episode
+          </div>
+          <div flex="70" class="text-right">
+            <span ng-bind="(parseInt(show.number, 10) < 10 ? '0' + show.number : show.number)"></span>
+          </div>
+        </div>
+        <div layout="row">
+          <div flex="30" class="heading">
+            Views
+          </div>
+          <div flex="70" class="text-right">
+            <span ng-bind="show.views"></span>
+          </div>
+        </div>
+        <!--<div layout="row">-->
+          <!--<div flex="30" class="heading">-->
+            <!--Viewed-->
+          <!--</div>-->
+          <!--<div flex="70" class="text-right">-->
+            <!--<span ng-bind="formatDate(show.lastViewedAt)"></span>-->
+          <!--</div>-->
+        <!--</div>-->
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
+
+

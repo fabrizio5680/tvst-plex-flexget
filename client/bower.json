@@ -1,0 +1,22 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.3.0",
+    "angular-animate": "^1.3.0",
+    "angular-cookies": "^1.3.0",
+    "angular-material": "master",
+    "angular-resource": "^1.3.0",
+    "angular-route": "^1.3.0",
+    "angular-sanitize": "^1.3.0",
+    "angular-toArrayFilter": "~1.0.1",
+    "angular-touch": "^1.3.0",
+    "moment": "~2.10.6"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.3.0"
+  },
+  "overrides": {},
+  "appPath": "app",
+  "moduleName": "clientApp"
+}

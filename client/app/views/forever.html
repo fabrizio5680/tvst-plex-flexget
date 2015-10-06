@@ -1,0 +1,5 @@
+<div class="line-main-container" layout="column" layout-fill="" layout-wrap="">
+  <div flex ng-repeat="line in foreverLogs track by $index">
+    <div class="line {{ line.type }}" ng-bind="line.line"></div>
+  </div>
+</div>
