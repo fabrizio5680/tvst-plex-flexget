@@ -89,7 +89,7 @@ angular.module('clientApp')
         }
 
         angular.forEach(shows, function (show) {
-          loadImage(show, 'http://ver0n.ddns.net:32400' + show.art + '?X-Plex-Token=QMHARuxedVkLMsEySe8g');
+          loadImage(show, config.url + show.art + '?X-Plex-Token=QMHARuxedVkLMsEySe8g');
 
           $scope.shows.push(show);
 
@@ -366,7 +366,7 @@ angular.module('clientApp')
 
     this.params = {};
     this.params.live = true;
-    this.params.url = 'http://ver0n.ddns.net:34700';
+    this.params.url = 'http://localhost:34700';
 
 
 
