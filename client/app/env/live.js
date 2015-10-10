@@ -13,7 +13,7 @@ angular.module('clientApp')
 
     this.params = {};
     this.params.live = true;
-    this.params.url = '/';
+    this.params.url = 'http://localhost:34700';
 
 
 
