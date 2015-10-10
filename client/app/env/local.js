@@ -12,7 +12,7 @@ angular.module('clientApp')
   .provider('config', function config() {
 
     this.params = {};
-    this.params.url = 'http://localhost:34700';
+    this.params.url = '/';
 
 
 
