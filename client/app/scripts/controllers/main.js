@@ -21,7 +21,7 @@ angular.module('clientApp')
         }
 
         angular.forEach(shows, function (show) {
-          loadImage(show, 'http://ver0n.ddns.net:32400' + show.art + '?X-Plex-Token=QMHARuxedVkLMsEySe8g');
+          loadImage(show, config.url + show.art + '?X-Plex-Token=QMHARuxedVkLMsEySe8g');
 
           $scope.shows.push(show);
 
