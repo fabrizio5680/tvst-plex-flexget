@@ -12,7 +12,7 @@ angular.module('clientApp')
   .provider('config', function config() {
 
     this.params = {};
-    this.params.url = 'http://192.168.192.45:34700';
+    this.params.url = 'http://'+ window.location.hostname +':34700';
 
 
 

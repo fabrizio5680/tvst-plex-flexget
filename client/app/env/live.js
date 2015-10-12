@@ -13,7 +13,7 @@ angular.module('clientApp')
 
     this.params = {};
     this.params.live = true;
-    this.params.url = 'http://192.168.192.45:34700';
+    this.params.url = 'http://'+ window.location.hostname +':34700';
 
 
 
